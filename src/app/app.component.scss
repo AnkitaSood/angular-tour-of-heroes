@@ -1,7 +1,9 @@
+@import "~styles";
+
 h1 {
-  font-size: 1.2em;
-  color: #999;
-  color: #555;
+  text-transform: uppercase;
+  text-shadow: 0.1rem 0.1rem 0 rgb(0 0 0 / 70%);
+  color: $orchid;
   margin-bottom: 0;
 }
 h2 {
