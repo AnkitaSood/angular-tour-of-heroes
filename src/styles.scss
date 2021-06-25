@@ -1,18 +1,83 @@
 @import "~styles";
 
-
 // RESET
 html,
 body {
   height: 100%;
-  font-family: "Pacifico", sans-serif;
-  background-color: $lilac;
-  padding: 0.5rem;
-  color: $orchid;
-  box-sizing: border-box;
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Pacifico", sans-serif;
+  font-size: 1rem;
+  background-color: $lilac;
+  padding: 1rem;
+  color: $orchid;
+  box-sizing: border-box;
+}
+
+// global
+
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 0.1rem solid $turquoise;
+  border-radius: 0.6em;
+  color: $turquoise;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  line-height: 1;
+  padding: 0.5rem;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  &-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &:hover,
+  &:focus {
+    color: $orchid;
+    outline: 0;
+  }
+
+  &-outline {
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 2.5rem 2.5rem $turquoise inset;
+    }
+  }
+
+  &-basic {
+    border-color: $turquoise;
+    color: $orchid;
+    box-shadow: 0 0 40px 40px $turquoise inset, 0 0 0 0 $turquoise;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 10px 0 $turquoise inset, 0 0 10px 4px $turquoise;
+    }
+  }
+
+  fa-icon {
+    margin-right: 0.5rem;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.error {
+  color:red;
 }

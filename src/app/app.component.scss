@@ -1,36 +1,46 @@
 @import "~styles";
 
 :host {
-display: block;
+  display: block;
 
   header {
     display: flex;
     align-items: center;
   }
-  h1 {
-    text-transform: uppercase;
-    text-shadow: 0.2rem 0.2rem 0 $blue-green;
-    margin-bottom: 0;
-    text-align: center;
-    font-size: 4rem;
-  }
 
-  h2 {
-    font-size: 2em;
-    margin-top: 0;
-    padding-top: 0;
+  .app-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: rotate(345deg);
+    margin: 0 2rem;
+
+    h1, h2 {
+      text-transform: uppercase;
+      text-shadow: 0.2rem 0.2rem 0 $blue-green;
+      margin-bottom: 0;
+      text-align: center;
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      align-self: flex-start;
+    }
+
   }
 
   nav {
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .nav-link {
     color: $blue-green;
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 2.75rem;
     margin: 0 3rem;
     padding: 0.5rem;
     position: relative;

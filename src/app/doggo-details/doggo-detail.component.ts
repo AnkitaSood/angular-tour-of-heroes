@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Doggo } from '../models/doggo';
 import {DoggoService} from '../services/doggo.service';
+import {faChevronLeft} from '@fortawesome/free-solid-svg-icons/faChevronLeft';
+import {faFile} from '@fortawesome/free-regular-svg-icons';
 
 
 @Component({
@@ -14,6 +16,8 @@ export class DoggoDetailComponent implements OnInit {
   @Output() close = new EventEmitter();
   error: any;
   navigated = false; // true if navigated here
+  faChevronLeft = faChevronLeft;
+  faFloppyDisk = faFile;
 
   constructor(
     private doggoService: DoggoService,

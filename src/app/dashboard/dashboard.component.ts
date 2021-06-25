@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {DoggoService} from '../services/doggo.service';
 import {Doggo} from '../models/doggo';
+import {faStar} from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'my-dashboard',
@@ -10,6 +11,7 @@ import {Doggo} from '../models/doggo';
 })
 export class DashboardComponent implements OnInit {
   doggos: Doggo[] = [];
+  faStar = faStar;
 
   constructor(
     private router: Router,

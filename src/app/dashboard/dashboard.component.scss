@@ -6,26 +6,22 @@
   .dashboard-container {
     display: flex;
     flex-direction: column;
+    padding: 1.5rem 0;
   }
 
   .dashboard-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-
-    h3 {
-      font-size: 2rem;
-    }
+    font-size: 2rem;
   }
 
   .dashboard-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 1rem 0 0 2.5rem;
+    gap: 1rem;
 
     li {
       padding-inline-start: 0.5rem;
+
       &::marker {
         content: "🐶";
       }

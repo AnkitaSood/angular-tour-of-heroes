@@ -1,11 +1,19 @@
-<div *ngIf="doggo">
+<ng-container *ngIf="doggo">
   <h2>{{doggo.name}} details!</h2>
-  <div>
-    <label>id: </label>{{doggo.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="doggo.name" placeholder="name" />
+
+  <span class="details-key">id: </span>
+  <span class="details-value">{{doggo.id}}</span>
+  <label class="details-key">name: </label>
+  <input class="details-value" [(ngModel)]="doggo.name" placeholder="name"/>
+  <div class="btn-container">
+    <button (click)="goBack()" class="btn btn-outline">
+      <fa-icon [icon]="faChevronLeft"></fa-icon>
+      Back
+    </button>
+    <button (click)="save()" class="btn btn-basic">
+      <fa-icon [icon]="faFloppyDisk"></fa-icon>
+      Save
+    </button>
+
   </div>
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
-</div>
+</ng-container>

@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-root',
   template: `
-    <header><h1>{{title}}</h1>
+    <header>
+      <div class="app-logo">
+      <h2>Tour of</h2>
+      <h1>Doggos!</h1>
+      </div>
     <nav>
       <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">Dashboard</a>
       <a routerLink="/doggos" routerLinkActive="active" class="nav-link">Doggos</a>
@@ -13,6 +17,4 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Tour of Doggos';
-}
+export class AppComponent {}
