@@ -1,8 +1,15 @@
+@import "~styles";
+
+
 // RESET
 html,
 body {
   height: 100%;
   font-family: "Pacifico", sans-serif;
+  background-color: $lilac;
+  padding: 0.5rem;
+  color: $orchid;
+  box-sizing: border-box;
 }
 
 * {

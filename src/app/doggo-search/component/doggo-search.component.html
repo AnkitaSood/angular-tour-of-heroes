@@ -1,0 +1,13 @@
+<div class="search-field">
+  <input #searchBox (keyup)="search(searchBox.value)" class="search-input" placeholder="Type to search doggos..."/>
+  <span class="search-btn">
+    <fa-icon [icon]=faSearch></fa-icon>
+  </span>
+</div>
+
+<ng-container *ngFor="let doggo of doggos | async"
+              (click)="gotoDetail(doggo)" class="search-result">
+  {{doggo.name}}
+</ng-container>
+
+

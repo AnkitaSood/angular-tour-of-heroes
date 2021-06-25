@@ -1,0 +1,44 @@
+<h2>My doggos</h2>
+
+<ul class="doggos">
+  <li *ngFor="let doggo of doggos" (click)="onSelect(doggo)" [class.selected]="doggo === selecteddoggo">
+    <span class="doggo-element">
+      <span class="badge">{{doggo.id}}</span> {{doggo.name}}
+    </span>
+    <button class="delete-button" (click)="deletedoggo(doggo, $event)">Delete</button>
+  </li>
+</ul>
+
+<div class="error" *ngIf="error">{{error}}</div>
+<button (click)="adddoggo()">Add New Doggo</button>
+<div *ngIf="addingdoggo">
+  <my-doggo-detail (close)="close($event)"></my-doggo-detail>
+</div>
+
+<div *ngIf="selecteddoggo">
+  <h2>
+    {{selecteddoggo.name | uppercase}} is my doggo
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+<div>
+  <style>
+    .hidden { visibility: hidden}
+  </style>
+  <h4>ngFor Features</h4>
+  <button (click)="showNgFor=!showNgFor">{{showNgFor ? 'Hide' : 'Show'}} ngFor Features</button>
+  <table [class.hidden]="!showNgFor">
+    <tbody>
+      <tr *ngFor="let doggo of doggos; let ix = index; let c = count; let e = even; let o = odd; let f = first; let l = last">
+        <td>{{doggo.name}}</td>
+        <td>{{ix}}</td>
+        <td>{{c}}</td>
+        <td>{{e}}</td>
+        <td>{{o}}</td>
+        <td>{{f}}</td>
+        <td>{{l}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -3,61 +3,61 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { Hero } from './hero';
+import { Doggo } from '../models/doggo';
 
 @Injectable()
-export class HeroService {
-  private heroesUrl = 'app/heroes'; // URL to web api
+export class DoggoService {
+  private doggosUrl = 'app/doggos'; // URL to web api
 
   constructor(private http: HttpClient) {}
 
-  getHeroes() {
+  getdoggos() {
     return this.http
-      .get<Hero[]>(this.heroesUrl)
+      .get<Doggo[]>(this.doggosUrl)
       .pipe(map(data => data), catchError(this.handleError));
   }
 
-  getHero(id: number): Observable<Hero> {
-    return this.getHeroes().pipe(
-      map(heroes => heroes.find(hero => hero.id === id))
+  getdoggo(id: number): Observable<Doggo> {
+    return this.getdoggos().pipe(
+      map(doggos => doggos.find(doggo => doggo.id === id))
     );
   }
 
-  save(hero: Hero) {
-    if (hero.id) {
-      return this.put(hero);
+  save(doggo: Doggo) {
+    if (doggo.id) {
+      return this.put(doggo);
     }
-    return this.post(hero);
+    return this.post(doggo);
   }
 
-  delete(hero: Hero) {
+  delete(doggo: Doggo) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const url = `${this.heroesUrl}/${hero.id}`;
+    const url = `${this.doggosUrl}/${doggo.id}`;
 
-    return this.http.delete<Hero>(url).pipe(catchError(this.handleError));
+    return this.http.delete<Doggo>(url).pipe(catchError(this.handleError));
   }
 
-  // Add new Hero
-  private post(hero: Hero) {
+  // Add new Doggo
+  private post(doggo: Doggo) {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
     return this.http
-      .post<Hero>(this.heroesUrl, hero)
+      .post<Doggo>(this.doggosUrl, doggo)
       .pipe(catchError(this.handleError));
   }
 
-  // Update existing Hero
-  private put(hero: Hero) {
+  // Update existing Doggo
+  private put(doggo: Doggo) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const url = `${this.heroesUrl}/${hero.id}`;
+    const url = `${this.doggosUrl}/${doggo.id}`;
 
-    return this.http.put<Hero>(url, hero).pipe(catchError(this.handleError));
+    return this.http.put<Doggo>(url, doggo).pipe(catchError(this.handleError));
   }
 
   private handleError(res: HttpErrorResponse | any) {

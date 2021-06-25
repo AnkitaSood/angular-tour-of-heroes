@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"tour-of-heroes": {
+		"tour-of-doggos": {
 			"root": "",
 			"sourceRoot": "src",
 			"projectType": "application",
@@ -57,18 +57,18 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"options": {
-						"browserTarget": "tour-of-heroes:build"
+						"browserTarget": "tour-of-doggos:build"
 					},
 					"configurations": {
 						"production": {
-							"browserTarget": "tour-of-heroes:build:production"
+							"browserTarget": "tour-of-doggos:build:production"
 						}
 					}
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "tour-of-heroes:build"
+						"browserTarget": "tour-of-doggos:build"
 					}
 				},
 				"test": {
@@ -105,7 +105,7 @@
 			}
 		}
 	},
-	"defaultProject": "tour-of-heroes",
+	"defaultProject": "tour-of-doggos",
 	"schematics": {
 		"@schematics/angular:component": {
 			"prefix": "my",

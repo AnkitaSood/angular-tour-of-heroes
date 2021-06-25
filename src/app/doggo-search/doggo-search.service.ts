@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Hero } from './hero';
+import { Doggo } from '../models/doggo';
 
 @Injectable()
-export class HeroSearchService {
+export class doggoSearchService {
   constructor(private http: HttpClient) {}
 
-  search(term: string): Observable<Hero[]> {
+  search(term: string): Observable<Doggo[]> {
     return this.http
-      .get<Hero[]>(`app/heroes/?name=${term}`)
+      .get<Doggo[]>(`app/doggos/?name=${term}`)
       .pipe(catchError(this.handleError));
   }
 

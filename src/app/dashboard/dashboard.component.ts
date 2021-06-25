@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import {DoggoService} from '../services/doggo.service';
+import {Doggo} from '../models/doggo';
 
 @Component({
   selector: 'my-dashboard',
@@ -10,20 +9,20 @@ import { HeroService } from './hero.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Hero[] = [];
+  doggos: Doggo[] = [];
 
   constructor(
     private router: Router,
-    private heroService: HeroService) {
+    private doggoService: DoggoService) {
   }
 
   ngOnInit(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+    this.doggoService.getdoggos()
+      .subscribe(doggos => this.doggos = doggos.slice(1, 5));
   }
 
-  gotoDetail(hero: Hero): void {
-    const link = ['/detail', hero.id];
+  gotoDetail(doggo: Doggo): void {
+    const link = ['/detail', doggo.id];
     this.router.navigate(link);
   }
 }

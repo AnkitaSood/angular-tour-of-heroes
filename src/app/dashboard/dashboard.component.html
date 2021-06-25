@@ -1,0 +1,14 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h3>
+      Top Doggo Breeds:
+    </h3>
+  </div>
+  <ul class="dashboard-list">
+    <li *ngFor="let doggo of doggos" (click)="gotoDetail(doggo)" class="">
+      {{doggo.name}}
+    </li>
+  </ul>
+</div>
+
+<my-doggo-search></my-doggo-search>

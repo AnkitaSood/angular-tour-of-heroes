@@ -1,0 +1,50 @@
+@import "~styles";
+
+:host {
+  display: block;
+  width: 20rem;
+
+  .search-field {
+    background: $turquoise;
+    height: 40px;
+    border-radius: 2rem;
+    padding: 10px;
+
+    &:hover {
+      > .search-input {
+        width: 180px;
+        padding: 0 10px;
+      }
+
+      > .search-btn {
+        background: white;
+      }
+
+    }
+  }
+
+  .search-btn {
+    color: red;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ABB2B9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-input {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: wheat;
+    font-size: 16px;
+    transition: ease-in 0.4s;
+    line-height: 40px;
+    width: 20rem;
+  }
+}
