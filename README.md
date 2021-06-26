@@ -1,6 +1,6 @@
 # Getting Started
 
-Super simple Angular app with 1 module and 2 routes. This is a minor variation on the Tour of doggos I wrote for the [official docs](https://angular.io/tutorial).
+Super simple Angular app with 1 module and 2 routes. This is a minor variation on the Tour of Heros I wrote for the [official docs](https://angular.io/tutorial).
 
 ## Get the Code
 ```
@@ -8,6 +8,15 @@ git clone https://github.com/johnpapa/angular-tour-of-doggos.git toh
 cd toh
 npm i
 ```
+
+## Changes
+ - Heroes to Doggos  
+ - Navigation and button styles  
+ - Search box ( **incompletely** inspired from [this link](https://codepen.io/100rabh_srivastava/pen/PoPyJyg) ) 
+ - Styling for Doggos list
+ - Colors sass file
+ - `stylePreprocessorOptions`
+ - Use `host` to style components
 
 ## Development server
 
